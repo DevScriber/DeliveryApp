@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- add sql.js libruary -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  </head>
+  <body>
+    <div id="auth-screen">
+      <h2>🔐 Вход в приложение</h2>
+      <input type="text" id="login" placeholder="Логин" />
+      <input type="password" id="password" placeholder="Пароль" />
+      <button id="auth-btn">Войти</button>
+      <p id="auth-error" style="color: red"></p>
+    </div>
+    <div id="app-content" style="display: none">
+      <form class="registration-form" action="" method="get">
+        <div class="input-wrapper">
+          <input type="text" name="id" placeholder="ID клиента" />
+        </div>
+
+        <div class="input-wrapper">
+          <label for="name">Enter your name:</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="input-wrapper">
+          <label for="phone">Enter your phone number:</label>
+          <input type="tel" name="phone" id="phone" required />
+        </div>
+        <div class="input-wrapper">
+          <label for="country">Enter your Country:</label>
+          <input type="text" name="country" id="country" required />
+        </div>
+        <div class="input-wrapper">
+          <label for="sity">Enter your city:</label>
+          <input type="text" name="city" id="city" required />
+        </div>
+        <div class="input-wrapper">
+          <label for="address">Enter your address:</label>
+          <input type="text" name="address" id="address" required />
+        </div>
+        <button class="add-client" type="submit">Add Client</button>
+      </form>
+      <button class="search-client" type="button">Find Client</button>
+      <button class="show-map">🗺️ Показать на карте</button>
+
+      <div id="clientModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h3>🔍 Найденные клиенты</h3>
+          <div id="clientList"></div>
+        </div>
+      </div>
+      <style>
+        .modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .modal-content {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          max-height: 80%;
+          overflow-y: auto;
+        }
+        .close-btn {
+          float: right;
+          cursor: pointer;
+          font-size: 20px;
+        }
+        .client-card {
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+      </style>
+    </div>
+
+    <!-- <script src="js/main.js"></script> -->
+    <script src="js/practice.js"></script>
+  </body>
+</html>
